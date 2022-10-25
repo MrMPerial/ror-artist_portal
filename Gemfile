@@ -71,4 +71,12 @@ group :test do
   gem "webdrivers"
 end
 
+#Authentication
 gem 'devise'
+
+# Styles
+gem 'bootstrap-sass'
+
+# For Bootstrap
+gem 'jquery-rails'
+gem 'popper_js'
