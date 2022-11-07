@@ -76,6 +76,7 @@ gem 'devise'
 
 # Styles
 gem 'bootstrap-sass'
+gem 'font-awesome-sass'
 
 # For Bootstrap
 gem 'jquery-rails'
