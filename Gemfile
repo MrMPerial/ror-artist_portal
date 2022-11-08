@@ -81,3 +81,9 @@ gem 'font-awesome-sass'
 # For Bootstrap
 gem 'jquery-rails'
 gem 'popper_js'
+
+# For Payments
+gem 'stripe'
+
+# For Security
+gem 'figaro'
