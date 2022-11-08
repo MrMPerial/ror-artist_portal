@@ -2,7 +2,9 @@
 <html>
   <head>
     <title>RorArtistPortal</title>
+    
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +12,10 @@
     <%= javascript_importmap_tags %>
 
     <%= javascript_include_tag 'application' %>
+
+    <%= javascript_include_tag "https://js.stripe.com/v2/", type: 'text/javascript' %>
+
+    <%# <%= tag :meta, :name => "stripe-key", :content => STRIPE_PUBLIC_KEY %> %>
   </head>
 
   <body>
@@ -29,6 +35,11 @@
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "About", about_path %></li>
             <li><%= link_to "Contact Us", new_contact_path %></li>
+            <% if current_user %>
+              <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: 'btn btn-primary navbar-btn' %>
+            <% else %>
+              <%= link_to "Log In", new_user_session_path, class: 'btn btn-primary navbar-btn', method: :get %>
+            <% end %>
           </ul>
         </div>
       </div>
