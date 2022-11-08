@@ -11,11 +11,7 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
 
-    <%= javascript_include_tag 'application' %>
-
-    <%= javascript_include_tag "https://js.stripe.com/v2/", type: 'text/javascript' %>
-
-    <%# <%= tag :meta, :name => "stripe-key", :content => STRIPE_PUBLIC_KEY %> %>
+    <%= tag :meta, :name => "stripe-key", :content => STRIPE_PUBLIC_KEY %>
   </head>
 
   <body>
