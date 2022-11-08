@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { registrations: 'users/registrations' }
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -8,6 +7,8 @@ Rails.application.routes.draw do
   root "pages#home"
 
   get '/about' => 'pages#about'
+
+  devise_for :users, controllers: { registrations: 'users/registrations' }
 
   resources :contacts
   resources :users do
