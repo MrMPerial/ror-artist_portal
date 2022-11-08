@@ -10,4 +10,7 @@ Rails.application.routes.draw do
   get '/about' => 'pages#about'
 
   resources :contacts
+  resources :users do
+    resource :profile
+  end
 end
