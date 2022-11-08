@@ -1,4 +1,4 @@
-class ProfilesController < ApplicationsController
+class ProfilesController < ApplicationController
   before_action :authenticate_user!
   before_action :only_current_user
 
@@ -28,7 +28,7 @@ class ProfilesController < ApplicationsController
     @user = User.find( params[:user_id] )
     @profile = @user.profile
 
-    if @profile.update_attributes(profile_params)
+    if @profile.update(profile_params)
       flash[:success] = "Profile Updated"
       redirect_to user_path( params[:user_id] )
     else
