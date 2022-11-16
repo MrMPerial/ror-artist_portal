@@ -12,7 +12,7 @@ class ProfilesController < ApplicationController
     @profile = @user.build_profile(profile_params)
 
     if @profile.save
-      flash[:success] = "Profile Updated"
+      flash[:success] = "Profile Updated!"
       redirect_to user_path( params[:user_id] )
     else
       render action: :new
@@ -29,7 +29,7 @@ class ProfilesController < ApplicationController
     @profile = @user.profile
 
     if @profile.update(profile_params)
-      flash[:success] = "Profile Updated"
+      flash[:success] = "Profile Updated!"
       redirect_to user_path( params[:user_id] )
     else
       render action: :edit
@@ -43,6 +43,6 @@ class ProfilesController < ApplicationController
 
     def only_current_user
       @user = User.find( params[:user_id] )
-      redirect_to(root_url) unless @user == current_user
+      redirect_to root_url unless @user == current_user
     end
 end

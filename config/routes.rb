@@ -4,12 +4,16 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  root "pages#home"
+  # ROOT
+  root 'pages#home'
 
+  # GET
   get '/about' => 'pages#about'
 
+  # DEVISE
   devise_for :users, controllers: { registrations: 'users/registrations' }
 
+  #RESOURCES
   resources :contacts
   resources :users do
     resource :profile

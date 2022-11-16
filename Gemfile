@@ -76,14 +76,20 @@ gem 'devise'
 
 # Styles
 gem 'bootstrap-sass'
-gem 'font-awesome-sass'
+gem "font-awesome-sass"
 
 # For Bootstrap
 gem 'jquery-rails'
 gem 'popper_js'
 
+# For Mail
+gem 'sendgrid-ruby'
+
 # For Payments
 gem 'stripe'
 
-# For Security
+# For Hiding Keys
 gem 'figaro'
+
+# CSS Vendor Prefixing
+gem 'autoprefixer-rails'

@@ -1,6 +1,6 @@
 <div class="jumbotron text-center top-space">
-  <h1>Welcome to Artist Portal</h1>
-  <h3>A Place to Connect with Independent Artists</h3>
+  <h1>Welcome, to the Artist Portal</h1>
+  <h3>A Place for Music artists to connect with Music A&amp;R's</h3>
 </div>
 
 <div class="row">
@@ -20,7 +20,7 @@
     <div class="col-md-6">
       <div class="well">
         <h2 class="text-center">The Community</h2>
-        <p>Visit the community to meet other developers, entrepreneurs, and investors!</p>
+        <p>Visit the community to meet other option 1, option 2, and option3!</p>
         <%= link_to "Visit the community", users_path, class: 'btn btn-default btn-lg btn-block' %>
       </div>
     </div>
@@ -28,7 +28,7 @@
     <div class="col-md-6">
       <div class="well">
         <h2 class="text-center">Basic Membership</h2>
-        <h4>Sign up for free and get basic access to the community.</h4>
+        <h4>Sign up for free and listen to all the music we have.</h4>
         <br/>
         <%= link_to "Sign up with Basic", new_user_registration_path(plan: @basic_plan.id), class: 'btn btn-primary btn-lg btn-block' %>
       </div>
@@ -36,7 +36,8 @@
     <div class="col-md-6">
       <div class="well">
         <h2 class="text-center">Pro Membership</h2>
-        <h4>Sign up for the pro account for $10/month and get access to the community and contact information!</h4>
+        <h4>Sign up for the pro account for $1/month and get connected!</h4>
+        <br>
         <%= link_to "Sign up with Pro", new_user_registration_path(plan: @pro_plan.id), class: 'btn btn-success btn-lg btn-block' %>
       </div>
     </div>

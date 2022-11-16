@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html>
-  <head></head>
-
-  <body>
-    <h2>You have received a message from the Artist Portal Contact Page</h2>
-
-    <h3>Your message is from <%= "#{ @name }, #{ @email }." %></h3>
-
-    <p><%= @body %></p>
-  </body>
+<head>
+</head>
+<body>
+  <p>You have received a message from the Dev Match contact form from 
+  <%= "#{ @name }, #{ @email }" %>
+  </p>
+  <p><%= @body %></p>
+</body>
 </html>

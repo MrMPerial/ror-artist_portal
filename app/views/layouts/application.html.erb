@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RorArtistPortal</title>
-    
+    <title>Artist Portal</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -12,49 +10,55 @@
     <%= javascript_importmap_tags %>
 
     <%= tag :meta, :name => "stripe-key", :content => STRIPE_PUBLIC_KEY %>
+
+    <%# TODO: %>
+    <%# Activate JavaScript for Bootstrap %>
+    <%# Setup SendGrid %>
+    <%# Setup Image Upload with ActiveStorage %>
   </head>
 
   <body>
-    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-  <div class='container'>
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <%= link_to root_path, class: 'navbar-brand' do %>
-        <i class="fa fa-users"></i>
-        Artist Portal
-      <% end %>
-    </div>
-    <div class="collapse navbar-collapse" id="main-nav-collapse">
-      <div class="nav navbar-nav navbar-right">
-        <% if user_signed_in? %>
-          <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: 'btn btn-primary navbar-btn' %>
-        <% else %>
-          <%= link_to "Log In", new_user_session_path, class: 'btn btn-primary navbar-btn', method: :get %>
-        <% end %>
+    <nav class="nav navbar-inverse navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav-collapse">
+            <span class="sr-only"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <%= link_to "Artist Portal", root_path, class: "navbar-brand" %>
+        </div>
+
+        <div class="collapse navbar-collapse" id="main-nav-collapse">
+          <div class="nav navbar-nav navbar-right">
+            <% if user_signed_in? %>
+              <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-primary navbar-btn"  %>
+            <% else %>
+              <%= link_to "Log In", new_user_session_path, class: "btn btn-primary navbar-btn", method: :get %>
+            <% end %>
+          </div>
+          <ul class="nav navbar-nav navbar-right">
+            <% if user_signed_in? %>
+              <li><%= link_to "Community", users_path %></li>
+              <li><%= link_to "My Account", edit_user_registration_path %></li>
+            <% end %>
+            <li><%= link_to "About", about_path %></li>
+            <li><%= link_to "Contact Us", new_contact_path %></li>
+          </ul>
+        </div>
       </div>
-      <ul class="nav navbar-nav navbar-right">
-        <% if user_signed_in? %>
-          <li><%= link_to "Community", users_path %></li>
-          <li><%= link_to "My Account", edit_user_registration_path %></li>
-        <% end %>
-        <li><%= link_to "About", about_path %></li>
-        <li><%= link_to "Contact Us", new_contact_path %></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div>
-</nav>
+    </nav>
 
     <div class="container">
-      <% flash.each do |key, value| %>
-        <%= content_tag :div, value, class: "alert alert-#{key}" %>
-      <% end %>
-      
+      <div class="top-space">
+        <% flash.each do |key, value| %>
+          <%= content_tag :div, value, class: "alert alert-#{key}"%>
+        <% end %>
+      </div>
+
       <%= yield %>
     </div>
+
   </body>
 </html>
