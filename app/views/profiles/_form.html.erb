@@ -1,4 +1,8 @@
-<%= form_for @profile, url: user_profile_path do |f| %>
+<%= form_for @profile, :multipart => true, url: user_profile_path do |f| %>
+  <div class="form-group">
+    <%= f.label :avatar %>
+    <%= file_field :profile, :avatar , class: 'form-control' %>
+  </div>
   <div class="form-group">
     <%= f.label :first_name %>
     <%= f.text_field :first_name, class: 'form-control' %>
