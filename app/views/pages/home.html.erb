@@ -1,7 +1,13 @@
-<div class="jumbotron text-center top-space">
-  <h1>Welcome, to the Artist Portal</h1>
-  <h3>A Place for Music artists to connect with Music A&amp;R's</h3>
-</div>
+<% if user_signed_in? %>
+  <div class="well">
+    <p style="margin-top: 12px;">Logged In</p>
+  </div>
+<% else %>
+  <div class="jumbotron text-center top-space">
+    <h1>Welcome, to the Artist Portal</h1>
+    <h3>A Place for Music artists to connect with Music A&amp;R's</h3>
+  </div>
+<% end %>
 
 <div class="row">
   <% if user_signed_in? %>
