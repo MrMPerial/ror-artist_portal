@@ -24,6 +24,22 @@
           <%= @user.profile.phone_number %><br/>
           <%= @user.profile.contact_email %><br/>
         </div>
+
+        <% if @user.profile.profile_type == 'Artist' %>
+          <div class="well profile-block" style="color: #010304;">
+            <h3>Artist Feature</h3>
+            <h4>SONG TITLE</h4>
+            <div class="row">
+              <div class="col-sm-3">
+                COVER IMAGE
+              </div>
+
+              <div class="col-sm-9">
+                SONG FILE              
+              </div>
+            </div>
+          </div>
+        <% end%>
       <% end %>
     </div>
   <% else %>

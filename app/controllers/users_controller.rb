@@ -8,5 +8,6 @@ class UsersController < ApplicationController
   def show
     @user = User.find( params[:id] )
     @profile = User.find( params[:id] ).profile
+    # @song = @profile.song
   end
 end

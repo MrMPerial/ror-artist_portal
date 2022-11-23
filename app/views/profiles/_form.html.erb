@@ -1,8 +1,11 @@
 <%= form_for @profile, :multipart => true, url: user_profile_path do |f| %>
+  <%# AVATAR %>
   <div class="form-group">
     <%= f.label :avatar %>
     <%= file_field :profile, :avatar , class: 'form-control' %>
   </div>
+
+  <%# NAME %>
   <div class="form-group">
     <%= f.label :first_name %>
     <%= f.text_field :first_name, class: 'form-control' %>
@@ -11,6 +14,8 @@
     <%= f.label :last_name %>
     <%= f.text_field :last_name, class: 'form-control' %>
   </div>
+
+  <%# PLAN %>
   <% if current_user.plan_id == 1 %>
     <div class="form-group">
       <%= f.label :profile_type %>
@@ -22,6 +27,8 @@
       <%= f.select :profile_type, ['Artist', 'A&R Rep'], {}, class: 'form-control' %>
     </div>
   <% end %>
+
+  <%# CONTACT %>
   <div class="form-group">
     <%= f.label :phone_number %>
     <%= f.text_field :phone_number, class: 'form-control' %>
@@ -30,10 +37,14 @@
     <%= f.label :contact_email %>
     <%= f.text_field :contact_email, class: 'form-control' %>
   </div>
+
+  <%# EXTRA %>
   <div class="form-group">
     <%= f.label :description %>
     <%= f.text_area :description, class: 'form-control' %>
   </div>
+
+  <%# SUBMIT %>
   <div class="form-group">
     <%= f.submit "Update Profile", class: 'btn btn-primary' %>
   </div>
