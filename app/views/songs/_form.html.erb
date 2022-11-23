@@ -1,8 +1,8 @@
-<%= form_for @song, :multipart => true, url: user_profile_path do |f| %>
+<%= form_for @song, :multipart => true, url: user_song_path do |f| %>
 
   <div class="form-group">
     <%= f.label :title %>
-    <%= text_field :song, :title , class: 'form-control' %>
+    <%= f.text_field :title , class: 'form-control' %>
   </div>
   <div class="form-group">
     <%= f.label :cover %> <span><i>( jpeg / png )</i></span>
@@ -11,6 +11,10 @@
   <div class="form-group">
     <%= f.label :file %> <span><i>( mp3 / wav )</i></span>
     <%= file_field :song, :file , class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit "Update Song", class: 'btn btn-primary' %>
   </div>
   
 <% end %>
