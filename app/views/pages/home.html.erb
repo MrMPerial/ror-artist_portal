@@ -19,7 +19,7 @@
           <%= link_to "View your profile", user_path(current_user), class: 'btn btn-default btn-lg btn-block' %>
 
           <% if current_user.profile.profile_type == 'Artist' %>
-            <%= link_to "Upload a Song", new_user_song_path(current_user), class: 'btn btn-default btn-lg btn-block' %>
+            <%= link_to "Upload a song", new_user_song_path(current_user), class: 'btn btn-default btn-lg btn-block' %>
           <% end %>
         <% else %>
           <p>Create your profile so that you can share your information with the community.</p>
@@ -30,7 +30,6 @@
     <div class="col-md-6">
       <div class="well">
         <h2 class="text-center">The Community</h2>
-        <p>Visit the community to meet Fans, Artists and A&amp;R Reps!</p>
         <%= link_to "Visit the community", users_path, class: 'btn btn-default btn-lg btn-block' %>
       </div>
     </div>
