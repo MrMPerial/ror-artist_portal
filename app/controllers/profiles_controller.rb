@@ -15,6 +15,7 @@ class ProfilesController < ApplicationController
       flash[:success] = "Profile Updated!"
       redirect_to user_path( params[:user_id] )
     else
+      flash[:warning] = "Something went wrong."
       render action: :new
     end
   end
