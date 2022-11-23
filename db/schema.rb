@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_23_183756) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_23_220521) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -80,6 +80,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_23_183756) do
     t.string "role"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "songs", force: :cascade do |t|
@@ -88,7 +89,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_23_183756) do
     t.integer "file_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "profiles_id"
+    t.integer "artists_id"
     t.index ["cover_id"], name: "index_songs_on_cover_id"
     t.index ["file_id"], name: "index_songs_on_file_id"
   end
