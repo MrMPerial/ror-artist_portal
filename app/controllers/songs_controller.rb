@@ -5,6 +5,8 @@ class SongsController < ApplicationController
   # Page
   def new
     @user = User.find( params[:user_id] )
+    @profile = @user.profile
+    @artist = 
     @song = Song.new
   end
 

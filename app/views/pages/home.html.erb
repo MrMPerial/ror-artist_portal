@@ -19,7 +19,7 @@
           <%= link_to "View your profile", user_path(current_user), class: 'btn btn-default btn-lg btn-block' %>
 
           <% if current_user.profile.profile_type == 'Artist' %>
-            <%= link_to "Upload a song", new_user_song_path(current_user), class: 'btn btn-default btn-lg btn-block' %>
+            <%= link_to "Upload a song", new_user_role_artist_song(current_user), class: 'btn btn-default btn-lg btn-block' %>
           <% end %>
         <% else %>
           <p>Create your profile so that you can share your information with the community.</p>
