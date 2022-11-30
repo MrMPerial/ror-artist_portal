@@ -1,56 +1,100 @@
 <% if user_signed_in? %>
-  <div class="well">
+
+  <div class="well">    
     <p style="margin-top: 12px;">Logged In</p>
   </div>
+
 <% else %>
+
   <div class="jumbotron text-center top-space">
     <h1>Welcome, to the Artist Portal</h1>
     <h3>A Place for Music artists to connect with Music A&amp;R's</h3>
   </div>
+
 <% end %>
 
 <div class="row">
+
   <% if user_signed_in? %>
+
     <div class="col-md-6">
       <div class="well">
         <h2 class="text-center">Your Profile</h2>
+
         <% if current_user.profile %>
-          <%= link_to "Edit your profile", edit_user_profile_path(current_user), class: 'btn btn-default btn-lg btn-block' %>
-          <%= link_to "View your profile", user_path(current_user), class: 'btn btn-default btn-lg btn-block' %>
+          
+          <%= link_to "Edit your profile",
+            edit_user_profile_path(current_user),
+            class: 'btn btn-default btn-lg btn-block' %>
+
+          <%= link_to "View your profile",
+            user_path(current_user),
+            class: 'btn btn-default btn-lg btn-block' %>
+
         <% else %>
+          
           <p>Create your profile so that you can share your information with the community.</p>
-          <%= link_to "Create your profile", new_user_profile_path(current_user), class: 'btn btn-default btn-lg btn-block'%>
+          
+          <%= link_to "Create your profile",
+            new_user_profile_path(current_user),
+            class: 'btn btn-default btn-lg btn-block' %>
+
         <% end %>
+
         <% if current_user.profile.profile_type == 'Artist' %>
-          <%= link_to "Upload your song", new_user_profile_song_path(current_user), class: 'btn btn-default btn-lg btn-block' %>
-          <%= if current_user.song %>
-            <%= link_to "View your song", user_profile_song_path(current_user), class: 'btn btn-default btn-lg btn-block' %>
-          <% end %>
+          
+          <%= link_to "Upload your song",
+            new_user_profile_song_path(current_user),
+            class: 'btn btn-default btn-lg btn-block' %>
+            
+          <%= link_to "View your song",
+            user_profile_song_path(current_user),
+            class: 'btn btn-default btn-lg btn-block' %>
+
         <% end %>
+
       </div>
     </div>
+
     <div class="col-md-6">
       <div class="well">
         <h2 class="text-center">The Community</h2>
-        <%= link_to "Visit the community", users_path, class: 'btn btn-default btn-lg btn-block' %>
+        
+        <%= link_to "Visit the community",
+          users_path,
+          class: 'btn btn-default btn-lg btn-block' %>
+
       </div>
     </div>
+
   <% else %>
+
     <div class="col-md-6">
       <div class="well">
         <h2 class="text-center">Basic Membership</h2>
         <h4>Sign up for free and listen to all the music we have.</h4>
         <br/>
-        <%= link_to "Sign up with Basic", new_user_registration_path(plan: @basic_plan.id), class: 'btn btn-primary btn-lg btn-block' %>
+
+        <%= link_to "Sign up with Basic",
+          new_user_registration_path(plan: @basic_plan.id),
+          class: 'btn btn-primary btn-lg btn-block' %>
+
       </div>
     </div>
+
     <div class="col-md-6">
       <div class="well">
         <h2 class="text-center">Pro Membership</h2>
         <h4>Sign up for the pro account for $1/month and get connected!</h4>
         <br>
-        <%= link_to "Sign up with Pro", new_user_registration_path(plan: @pro_plan.id), class: 'btn btn-success btn-lg btn-block' %>
+        
+        <%= link_to "Sign up with Pro",
+          new_user_registration_path(plan: @pro_plan.id),
+          class: 'btn btn-success btn-lg btn-block' %>
+
       </div>
     </div>
+
   <% end %>
+
 </div>
