@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   #RESOURCES
   resources :contacts
   resources :users do
-    resource :profile
+    resource :profile do
+      resource :song
+    end
   end
 end

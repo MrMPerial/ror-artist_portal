@@ -1,0 +1,24 @@
+<%= form_for @song, :multipart => true, url: user_profile_song_path do |f| %>
+  <%# Title %>
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+
+  <%# Cover %>
+  <div class="form-group">
+    <%= f.label :cover %> <i>( JPEG/PNG )</i>
+    <%= file_field :song, :cover , class: 'form-control' %>
+  </div>
+
+  <%# File %>
+  <div class="form-group">
+    <%= f.label :file %> <i>( MP3/WAV )</i>
+    <%= file_field :song, :file , class: 'form-control' %>
+  </div>
+
+  <%# Button %>
+  <div class="form-group">
+    <%= f.submit "Update Song", class: 'btn btn-primary' %>
+  </div>
+<% end %>
