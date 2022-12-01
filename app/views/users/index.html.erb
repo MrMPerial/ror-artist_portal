@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-md-8 col-md-offset-2">
+  <div class="col-md-6">
     <ul class="list-unstyled">
       <% @user.each do |user| %>
         <% if user.profile %>
@@ -33,5 +33,17 @@
         <% end %>
       <% end %>
     </ul>
+  </div>
+
+  <div class="col-md-6">
+    <div class="well">
+      <h2>Listen and Vote</h2>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="well">
+      <h2>Comments</h2>
+    </div>
   </div>
 </div>
