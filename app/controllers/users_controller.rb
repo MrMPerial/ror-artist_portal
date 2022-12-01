@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   
   def index
     @user = User.all
+    @song = Song.all
   end
 
   def show

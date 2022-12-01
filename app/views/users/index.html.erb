@@ -38,6 +38,38 @@
   <div class="col-md-6">
     <div class="well">
       <h2>Listen and Vote</h2>
+
+      <hr>
+
+      <% @song.each do |s| %>
+        
+        <ul class="list-unstyled" style="margin: 0 auto; width: 90%; border: 1px solid black; border-radius: 5px; padding: 10px 20px; box-shadow: 0 5px #337ab7;">
+          <li>
+            <h3 style="margin-bottom: 0; padding-bottom;"><%= s.title %></h3><br>
+            
+            <%= image_tag s.song_cover, style: 'width: 100px' %>
+            
+            <audio style="background-color: #337ab7;" controls>
+              <source src="<%= url_for(s.song_file) %>" type="audio/mpeg">
+            </audio>
+
+            <div class="row">
+              <div class="col-sm-3">
+                <div style="margin-top: 20px; margin-bottom: 10px;">
+                  <i class="fa-solid fa-thumbs-up" style="font-size: large;"></i> | <i class="fa-solid fa-thumbs-down" style="font-size: large; transform: scaleX(-1)"></i>
+                </div>
+              </div>
+
+              <div class="col-sm-3 col-sm-offset-6">
+                <button class="btn btn-small" style="margin-top: 10px;">Save Song</button>
+              </div>
+            </div>
+
+          </li>
+        </ul>
+
+      <% end %>
+
     </div>
   </div>
 
