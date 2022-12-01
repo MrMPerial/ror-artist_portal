@@ -1,3 +1,26 @@
-<h1><%= @song.title %></h1>
-<%= image_tag @user.song.cover, style: 'width: 300px' %> 
-<%# <%= audio_tag @user.song.file, controls: true %> %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="well">
+
+
+      <h1><%= @song.title %></h1>
+        
+      <% if @user.song.song_cover.attached? %>
+      
+        <%= image_tag @user.song.song_cover, style: 'width: 300px' %>
+      
+      <% end %>
+
+      <br>
+
+      <% if @user.song.song_file.attached? %>
+    
+        <audio controls>
+          <source src="<%= url_for(@user.song.song_file) %>" type="audio/mpeg">
+        </audio>
+        
+      <% end %>
+
+    </div>
+  </div>
+</div>
